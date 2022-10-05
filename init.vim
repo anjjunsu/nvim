@@ -58,11 +58,13 @@ lua <<EOF
       -- documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
+      ['<Up'] = cmp.mapping.select_prev_item(select_opts),
+      ['<Down'] = cmp.mapping.select_next_item(select_opts),
       ['<C-d>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.close(),
-      ['<CR>'] = cmp.mapping.confirm({ 
+      ['<Tab>'] = cmp.mapping.confirm({ 
         behaviour = cmp.ConfirmBehavior.Replace, 
         select = true
       }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
