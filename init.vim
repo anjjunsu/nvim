@@ -39,7 +39,7 @@ Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
 
 " colorscheme gruvbox
-" colorscheme tokyonight-night
+colorscheme tokyonight-night
 
 " Auto-completion and LSP
 set completeopt=menu,menuone,noselect
