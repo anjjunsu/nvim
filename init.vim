@@ -21,6 +21,7 @@ set noshowmode
 set signcolumn=yes
 set colorcolumn=80
 set updatetime=300
+set clipboard=unnamed
 
 call plug#begin('~/.vim/plugged')
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -37,10 +38,11 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'simrat39/rust-tools.nvim'
 call plug#end()
 
 " colorscheme gruvbox
-colorscheme tokyonight-night
+" colorscheme tokyonight-night
 
 " treesitter
 lua << EOF
@@ -110,7 +112,7 @@ lua << EOF
 EOF
 
 " Auto-completion and LSP
-set completeopt=menu,menuone,noselect
+set completeopt=menu,menuone,noselect,noselect
 
 lua <<EOF
   local cmp = require'cmp'
@@ -150,6 +152,43 @@ lua <<EOF
   require('lspconfig')['tsserver'].setup {
     capabilities = capabilities
   }
+  
+  local nvim_lsp = require'lspconfig'
+
+    local opts = {
+        tools = {
+            runnables = {
+                use_telescope = true
+            },
+            inlay_hints = {
+                auto = true,
+                show_parameter_hints = false,
+                parameter_hints_prefix = "",
+                other_hints_prefix = "",
+            },
+        },
+
+        -- all the opts to send to nvim-lspconfig
+        -- these override the defaults set by rust-tools.nvim
+        -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rust_analyzer
+        server = {
+            -- on_attach is a callback called when the language server attachs to the buffer
+            -- on_attach = on_attach,
+            settings = {
+                -- to enable rust-analyzer settings visit:
+                -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+                ["rust-analyzer"] = {
+                    -- enable clippy on save
+                    checkOnSave = {
+                        command = "clippy"
+                    },
+                }
+            }
+        },
+    }
+
+    require('rust-tools').setup(opts)
+    require('rust-tools').setup(opts)
 EOF
 
 " Lua line               
