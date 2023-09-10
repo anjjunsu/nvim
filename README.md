@@ -12,7 +12,10 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 4. Run `alias vim=nvim`
 5. Git clone this repo to `$XDG_CONFIG_HOME/`
     > Note: If $XDG_CONFIG_HOME is either not set or empty, a default equal to $HOME/.config should be used
+6. Run `:PackerSync`
 
+> TODO: Packer is not maintained anymore. Find alternative
+> 
 ## Usage
 
 ### File browser
