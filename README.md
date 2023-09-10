@@ -6,7 +6,7 @@
 2. Install **packer.nvim** package manager. Run
 ```
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.config/nvim/site/pack/packer/start/packer.nvim
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 4. Run `alias vim=nvim`
 5. Git clone this repo to `$XDG_CONFIG_HOME/`
