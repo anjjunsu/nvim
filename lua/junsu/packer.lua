@@ -12,19 +12,6 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
-
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
@@ -63,4 +50,7 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},     -- Required
 	  }
   }
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 end)
