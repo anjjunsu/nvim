@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. Install `c` compiler
+1. Install `c` and `c++` compiler
 2. Install `neovim`
 3. Install **packer.nvim** package manager. Run
 ```
