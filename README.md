@@ -14,7 +14,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
     > Note: If $XDG_CONFIG_HOME is either not set or empty, a default equal to $HOME/.config should be used
 6. Run `:PackerSync`
 
-> TODO: Packer is not maintained anymore. Find alternative
+> TODO: Packer is not maintained anymore. Find alternative               
 > TODO: `ripgrip`
 > 
 ## Usage
