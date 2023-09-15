@@ -16,7 +16,8 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 > TODO: Packer is not maintained anymore. Find alternative               
 > TODO: `ripgrip`
-> 
+> TODO: `cscope` I need some kind of source code explorer
+
 ## Usage
 
 ### File browser
